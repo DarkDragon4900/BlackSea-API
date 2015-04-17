@@ -8,7 +8,7 @@ namespace BlackSea.Link
         UserControl GUI { get; }
         Connection Connection { get; set; }
         bool IsSizable { get; }
-        void Load();
+        void Initialization();
         void Open();
         void Close();
     }
