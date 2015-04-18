@@ -12,7 +12,7 @@ namespace BlackSea.Link
             switch (m.Type)
             {
                 case "b":
-                    OnBlockPlaced(myHost.Players.GetByID(m.GetInt(4)), myHost.WorldMap.GetBlock(m.GetInt(0), new Position(m.GetInt(1), m.GetInt(2))));
+                    OnBlockPlaced(Host.Players.GetByID(m.GetInt(4)), Host.WorldMap.GetBlock(m.GetInt(0), new Position(m.GetInt(1), m.GetInt(2))));
                     break;
                 case "bc":
                 case "bs":
@@ -20,56 +20,56 @@ namespace BlackSea.Link
                 case "lb":
                 case "wp":
                 case "ts":
-                    OnBlockPlaced(myHost.Players.GetByID(m.GetInt(4)), myHost.WorldMap.GetBlock(0, new Position(m.GetInt(0), m.GetInt(1))));
+                    OnBlockPlaced(Host.Players.GetByID(m.GetInt(4)), Host.WorldMap.GetBlock(0, new Position(m.GetInt(0), m.GetInt(1))));
                     break;
                 case "pt":
-                    OnBlockPlaced(myHost.Players.GetByID(m.GetInt(4)), myHost.WorldMap.GetBlock(0, new Position(m.GetInt(0), m.GetInt(1))));
+                    OnBlockPlaced(Host.Players.GetByID(m.GetInt(4)), Host.WorldMap.GetBlock(0, new Position(m.GetInt(0), m.GetInt(1))));
                     break;
                 case "add":
-                    OnPlayerJoined(myHost.Players.GetByID(m.GetInt(0)));
+                    OnPlayerJoined(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "left":
-                    OnPlayerLeft(myHost.Players.GetByID(m.GetInt(0)));
+                    OnPlayerLeft(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "m":
-                    OnPlayerMoved(myHost.Players.GetByID(m.GetInt(0)), new Move(m));
+                    OnPlayerMoved(Host.Players.GetByID(m.GetInt(0)), new Move(m));
                     break;
                 case "c":
-                    OnCoinCollected(myHost.Players.GetByID(m.GetInt(0)));
+                    OnCoinCollected(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "k":
-                    OnCrownTaken(myHost.Players.GetByID(m.GetInt(0)));
+                    OnCrownTaken(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "ks":
-                    OnTrophyTaken(myHost.Players.GetByID(m.GetInt(0)));
+                    OnTrophyTaken(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "wu":
-                    OnWootGiven(myHost.Players.GetByID(m.GetInt(0)));
+                    OnWootGiven(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "face":
-                    OnSmileyChanged(myHost.Players.GetByID(m.GetInt(0)));
+                    OnSmileyChanged(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "mod":
                 case "guardian":
                 case "god":
-                    OnGodStateChanged(myHost.Players.GetByID(m.GetInt(0)));
+                    OnGodStateChanged(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "say":
-                    OnPlayerSpoken(myHost.Players.GetByID(m.GetInt(0)), m.GetString(1), false);
+                    OnPlayerSpoken(Host.Players.GetByID(m.GetInt(0)), m.GetString(1), false);
                     if (m.GetString(1)[0] == '!')
                     {
                         string[] args = m.GetString(1).Split(' ').ToArray();
                         string Action = args[0].Substring(1).ToLower();
                         for (int i = 0; i < args.Length; i++)
                             args[i] = args[i].ToLower();
-                        OnActionRequested(myHost.Players.GetByID(m.GetInt(0)), Action, args.Skip(1).ToArray());
+                        OnActionRequested(Host.Players.GetByID(m.GetInt(0)), Action, args.Skip(1).ToArray());
                     }
                     break;
                 case "tele":
-                    OnPlayerTeleported(myHost.Players.GetByID(m.GetInt(1)));
+                    OnPlayerTeleported(Host.Players.GetByID(m.GetInt(1)));
                     break;
                 case "kill":
-                    OnPlayerDied(myHost.Players.GetByID(m.GetInt(0)));
+                    OnPlayerDied(Host.Players.GetByID(m.GetInt(0)));
                     break;
                 case "access":
                     OnAccessReceived();
@@ -87,7 +87,7 @@ namespace BlackSea.Link
                     OnLevelSaved();
                     break;
                 case "p":
-                    OnPotionDrank(myHost.Players.GetByID(m.GetInt(0)), m.GetInt(1));
+                    OnPotionDrank(Host.Players.GetByID(m.GetInt(0)), m.GetInt(1));
                     break;
                 case "updatemeta":
                     OnMetaUpdated();

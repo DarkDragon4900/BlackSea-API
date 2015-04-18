@@ -2,11 +2,11 @@
 {
     public partial class Connection
     {
-        private IHost myHost;
+        private IHost Host;
 
         public Connection(IHost Host)
         {
-            myHost = Host;
+            this.Host = Host;
             BlockPlacer.WorkerSupportsCancellation = true;
             BlockPlacer.DoWork += BlockSender_DoWork;
         }

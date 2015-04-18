@@ -47,7 +47,7 @@
     <Compile Include="Link\Connection\Host.cs" />
     <Compile Include="Link\Connection\Parse.cs" />
     <Compile Include="Link\LegoPiece.cs" />
-    <Compile Include="World\Area.cs" />
+    <Compile Include="World\Map.cs" />
     <Compile Include="World\Blocks\BackgroundBlock.cs" />
     <Compile Include="World\Blocks\IBlock.cs" />
     <Compile Include="World\Blocks\PortalBlock.cs" />
