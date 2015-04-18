@@ -6,8 +6,7 @@ BlackSea API is the core of the LegoBot and its LegoPieces (the tiny bots).
 
 
 To Add:
-PayVault Support
-EEPhysics
+PayVault Support and EEPhysics
 
 To advance:
 Compatibility
